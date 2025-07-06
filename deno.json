@@ -1,0 +1,18 @@
+{
+	"fmt": {
+		"include": [
+			"rippler.js",
+			"index.html",
+			"main.js",
+			"deno.json",
+			"style.css"
+		],
+		"useTabs": true,
+		"indentWidth": 4
+	},
+	"tasks": {
+		"serve": "deno run -A --watch https://deno.land/std/http/file_server.ts ./demo/",
+		"format": "deno fmt",
+		"gemini": "gemini"
+	}
+}

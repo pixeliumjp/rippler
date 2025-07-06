@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Rippler</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="ripple-container">
+			<!-- 波紋を適用する要素 -->
+		</div>
+
+		<script type="module">
+			import Rippler from "./rippler.js";
+
+			document.addEventListener(
+				"DOMContentLoaded",
+				function () {
+					const rippleElement = document
+						.querySelector(".ripple-container");
+					if (rippleElement) {
+						new Rippler(rippleElement, {
+							resolution: 512,
+							dropRadius: 20,
+							perturbance: 0.04,
+							interactive: true,
+							imageUrl: "bg.jpg",
+						});
+					}
+				},
+			);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+body {
+	margin: 0;
+}
+
+.ripple-container {
+	width: 100dvw;
+	height: 100dvh;
+	background-size: cover;
+	background-position: center;
+	background-image: url(bg.jpg);
+}
