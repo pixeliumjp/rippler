@@ -3,33 +3,110 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Rippler</title>
+		<title>Rippler｜WebGLリップルエフェクト｜コードサンプル</title>
 		<link rel="stylesheet" href="style.css">
+
+		<!-- Prism.js CSS -->
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
-		<div class="ripple-container">
-			<!-- 波紋を適用する要素 -->
+		<div class="visual">
+			<h1>Rippler</h1>
+		</div>
+
+		<div class="container">
+			<h2>このライブラリについて</h2>
+			<p>
+				WebGLを使用した美しい波紋エフェクトをWebページに追加するライブラリです。
+			</p>
+			<h2>クイックスタート</h2>
+
+			<div class="code-wrapper">
+				<div class="code-header">
+					<span>NPM</span>
+					<button class="copy-button" onclick="copyCode(this)">
+						コピー
+					</button>
+				</div>
+				<pre><code class="language-bash">npm install rippler-js</code></pre>
+			</div>
+
+			<div class="code-wrapper">
+				<div class="code-header">
+					<span>CDN</span>
+					<button class="copy-button" onclick="copyCode(this)">
+						コピー
+					</button>
+				</div>
+				<pre>
+<code class="language-html">&lt;script type="module"&gt;
+import { Rippler } from 'https://cdn.jsdelivr.net/npm/rippler-js@latest/dist/rippler.min.js';
+&lt;/script&gt;</code></pre>
+			</div>
+
+			<div class="code-wrapper">
+				<div class="code-header">
+					<span>HTML</span>
+					<button class="copy-button" onclick="copyCode(this)">
+						コピー
+					</button>
+				</div>
+				<pre>
+<code class="language-html">&lt;!-- リップルエフェクトを適用する要素 --&gt;
+&lt;div id="ripple-container" style="width: 100%; height: 400px; background-image: url('background.jpg');"&gt;
+&lt;h2&gt;美しい波紋エフェクト&lt;/h2&gt;
+&lt;p&gt;マウスを動かしてみてください&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+			</div>
+
+			<h2>Demo</h2>
+
+			<h3>デフォルト</h3>
+			<div class="rippler first">
+				<!-- 波紋を適用する要素 -->
+			</div>
+
+			<div class="rippler second">
+				<!-- 波紋を適用する要素 -->
+			</div>
 		</div>
 
 		<script type="module">
 			import Rippler from "./rippler.js";
 
-			document.addEventListener(
-				"DOMContentLoaded",
-				function () {
-					const rippleElement = document
-						.querySelector(".ripple-container");
-					if (rippleElement) {
-						new Rippler(rippleElement, {
-							resolution: 512,
-							dropRadius: 20,
-							perturbance: 0.04,
-							interactive: true,
-							imageUrl: "bg.jpg",
-						});
-					}
-				},
+			const rippleElement_visual = document.querySelector(
+				".visual",
 			);
+			new Rippler(rippleElement_visual, {
+				resolution: 128,
+				dropRadius: 20,
+				perturbance: 0.04,
+				interactive: true,
+				imageUrl: "bg.jpg",
+			});
+
+			const rippleElement_first = document.querySelector(
+				".rippler.first",
+			);
+			new Rippler(rippleElement_first);
+
+			const rippleElement_second = document.querySelector(
+				".rippler.second",
+			);
+			new Rippler(rippleElement_second, {
+				resolution: 256,
+				dropRadius: 10,
+				perturbance: 0.04,
+				interactive: true,
+				imageUrl: "bg.jpg",
+			});
 		</script>
 	</body>
 </html>
