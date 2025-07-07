@@ -2,9 +2,9 @@
 	"fmt": {
 		"include": [
 			"src/rippler.js",
-			"demo/rippler.js",
-			"demo/index.html",
-			"demo/main.js",
+			"docs/rippler.js",
+			"docs/index.html",
+			"docs/main.js",
 			"index.html",
 			"deno.json",
 			"style.css"
