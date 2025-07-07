@@ -1,10 +1,14 @@
+*{
+	box-sizing: border-box;
+}
+
 body {
 	margin: 0;
 }
 
 .visual {
 	width: 100%;
-	height: 100dvh;
+	height: min(100dvh,800px);
 	background-size: cover;
 	background-position: center;
 	background-image: url(bg.jpg);
@@ -15,13 +19,17 @@ body {
 
 h1{
 	font-size: 5rem;
-	color:#fff;
+    mix-blend-mode: overlay;
+    color: #000;
+	pointer-events: none;
+	user-select: none;
 }
 
 .container{
 	margin-block-start: 3rem;
-	width: min(100%,600px);
+	width: min(100%,700px);
 	margin-inline: auto;
+	padding-inline: 1rem;
 }
 
 .rippler{
@@ -29,8 +37,54 @@ h1{
 	height: 300px;
 }
 
-.rippler {
+.rippler.default{
 	background-size: cover;
 	background-position: center;
 	background-image: url(bg.jpg);
+}
+
+
+.code-wrapper {
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.code-header {
+	background: #2d2d2d;
+	color: white;
+	padding-inline: 1em;
+	padding-block-start: 1em;
+	border-radius: 8px 8px 0 0;
+	font-size: 14px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.code-toolbar{
+	pre[class*="language-"] {
+		margin: 0;
+		border-radius: 0 0 8px 8px;
+		font-size: 14px;
+	}
+}
+
+
+.copy-button {
+	background: #4caf50;
+	color: white;
+	border: none;
+	padding: 5px 15px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 12px;
+	transition: background 0.3s;
+}
+
+.copy-button:hover {
+	background: #45a049;
+}
+
+.copy-button.copied {
+	background: #2196f3;
 }
