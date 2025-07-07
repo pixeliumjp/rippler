@@ -4,5 +4,26 @@
     "@pkgjs/parseargs@0.11.0": {
       "integrity": "sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg=="
     }
+  },
+  "redirects": {
+    "https://esm.sh/@types/prismjs@~1.26.5/index.d.ts": "https://esm.sh/@types/prismjs@1.26.5/index.d.ts"
+  },
+  "remote": {
+    "https://cdn.jsdelivr.net/gh/pixeliumjp/rippler@1.0.0/src/rippler.min.js": "e39fb2d1939748c5604972bb87235e8a2993def14561421bbad05cc0d66f0a44",
+    "https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js": "e7b88bddc6c757b2fc8cb113e2469801ab14a78ec1a8fada4d6391e3573f5f9f",
+    "https://esm.sh/prismjs@1.29.0": "263ab9a7771b54d8a344ddfc031e31cb5aa0572c25773ea7d0a68cca6f91d060",
+    "https://esm.sh/prismjs@1.29.0/components/prism-bash": "3b9e13a7c4d6c4f003ed7cc5035c567aef39720dc31c2ae147d05764ecbd399d",
+    "https://esm.sh/prismjs@1.29.0/components/prism-javascript": "7023e136954b90726641d1eb0baab3f901df24ee2754db9519d455fe4d7d8959",
+    "https://esm.sh/prismjs@1.29.0/components/prism-javascript.min.js": "2099bd8a34e40601d7e6d8d30d6e8d5c1586243b2a62794fdbd5eab545d7ff38",
+    "https://esm.sh/prismjs@1.29.0/components/prism-markup": "424a889e43e029e5fcbf08190a111d87c4187cf642f20e778743a6ce1b37a676",
+    "https://esm.sh/prismjs@1.29.0/denonext/components/prism-bash.mjs": "53de140b7f10e7b06387d3e8734487311c839ace770b0a25a1d3d68ee420738b",
+    "https://esm.sh/prismjs@1.29.0/denonext/components/prism-javascript.min.mjs": "343fde53611c0ebd7c1132e033311c3dbf06b9e9eee9894ac134c3c93b424ee5",
+    "https://esm.sh/prismjs@1.29.0/denonext/components/prism-javascript.mjs": "1d9fafe38901bf31da89aff10bbdac2fc47246b6ac23a530bf93bfc8a8d3c1ec",
+    "https://esm.sh/prismjs@1.29.0/denonext/components/prism-markup.mjs": "c65e146bb988511e31906c1a7901222786ddfd3149d66a246f341579324e4886",
+    "https://esm.sh/prismjs@1.29.0/denonext/plugins/line-numbers/prism-line-numbers.mjs": "a58c6dca4e896c606e7bb10ffd8d6828d46b4a30ed1f86e0a815ef097a678b95",
+    "https://esm.sh/prismjs@1.29.0/denonext/plugins/toolbar/prism-toolbar.mjs": "5db5752763b5ed1ed836c1477a1d6bae5948e5bd7522dd1871f7927edb44ce50",
+    "https://esm.sh/prismjs@1.29.0/denonext/prismjs.mjs": "22ae3128203d6ca4793dae7e1728b8d7db21b54e373e9538cae7a61cce159630",
+    "https://esm.sh/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers": "2f23152f0d4fd828b1fa8c6f8a2947319f93601341a7cbc78dd180ad596cebf0",
+    "https://esm.sh/prismjs@1.29.0/plugins/toolbar/prism-toolbar": "5bf3930a91d056d34ff62d53e381e6eb772173eba9eb38a6f95e3da359d48c4b"
   }
 }

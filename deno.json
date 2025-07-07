@@ -1,18 +1,19 @@
 {
 	"name": "rippler",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"fmt": {
 		"include": [
 			"src/rippler.js",
 			"demo/rippler.js",
 			"demo/index.html",
+			"demo/main.js",
 			"index.html",
-			"main.js",
 			"deno.json",
 			"style.css"
 		],
 		"useTabs": true,
-		"indentWidth": 4
+		"indentWidth": 4,
+		"lineWidth": 200
 	},
 	"tasks": {
 		"serve": "deno run -A --watch https://deno.land/std/http/file_server.ts ./demo/",
