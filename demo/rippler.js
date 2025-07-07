@@ -220,9 +220,7 @@ class Rippler {
 
 		// Create render targets
 		const arrayType = this.config.arrayType;
-		const textureData = arrayType
-			? new arrayType(this.resolution * this.resolution * 4)
-			: null;
+		const textureData = arrayType ? new arrayType(this.resolution * this.resolution * 4) : null;
 
 		for (let i = 0; i < 2; i++) {
 			const texture = gl.createTexture();
@@ -522,8 +520,7 @@ class Rippler {
 	// Public methods
 	loadImage() {
 		const gl = this.gl;
-		const cssBackground =
-			window.getComputedStyle(this.element).backgroundImage;
+		const cssBackground = window.getComputedStyle(this.element).backgroundImage;
 		const newImageSource = this.imageUrl || this._extractUrl(cssBackground);
 
 		if (newImageSource === this.imageSource) return;
@@ -539,10 +536,7 @@ class Rippler {
 
 		image.onload = () => {
 			const isPowerOfTwo = (x) => (x & (x - 1)) === 0;
-			const wrapping =
-				(isPowerOfTwo(image.width) && isPowerOfTwo(image.height))
-					? gl.REPEAT
-					: gl.CLAMP_TO_EDGE;
+			const wrapping = (isPowerOfTwo(image.width) && isPowerOfTwo(image.height)) ? gl.REPEAT : gl.CLAMP_TO_EDGE;
 
 			gl.bindTexture(gl.TEXTURE_2D, this.backgroundTexture);
 			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, wrapping);
@@ -565,9 +559,7 @@ class Rippler {
 			this._setTransparentTexture();
 		};
 
-		image.crossOrigin = this._isDataUri(this.imageSource)
-			? null
-			: this.crossOrigin;
+		image.crossOrigin = this._isDataUri(this.imageSource) ? null : this.crossOrigin;
 		image.src = this.imageSource;
 	}
 
