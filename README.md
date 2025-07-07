@@ -1,16 +1,28 @@
 # Rippler
 
-Ripplerは、要素に水面の波紋（リップル）エフェクトを生成する、依存関係のないJavaScriptライブラリです。このプロジェクトは、sirxemic氏によるオリジナルの[jquery.ripples](https://github.com/sirxemic/jquery.ripples)のフォークであり、jQueryへの依存をなくし、モダンなJavaScript標準（ES2023）で書き直されています。
+**Rippler** は、要素に水面のような波紋（リップル）エフェクトを生成する、依存ライブラリなしの軽量な JavaScript ライブラリです。
 
-WebGLを利用して高性能なレンダリングを行い、あらゆる背景画像に対してインタラクティブで視覚的に魅力的な水の効果を可能にします。
+このプロジェクトは、[@sirxemic](https://github.com/sirxemic) 氏によるオリジナルの [jquery.ripples](https://github.com/sirxemic/jquery.ripples) をベースに、**jQuery依存を排除**し、**モダンなJavaScript（ES2023）** で全面的に書き直されたフォークです。
+
+WebGL によるハードウェアアクセラレーションを活用することで、あらゆる背景画像に対して、滑らかで高性能な視覚効果を提供します。
+マウスやタッチ操作にも反応し、インタラクティブで印象的なユーザー体験を実現します。
 
 ## 特徴
 
-*   **依存関係なし**: jQueryやその他の外部ライブラリなしで動作します。
-*   **高性能**: WebGLを使用し、ハードウェアアクセラレーションによる滑らかなアニメーションを実現します。
-*   **高いカスタマイズ性**: 解像度、波紋の半径、乱れの強さなどを簡単に調整できます。
-*   **インタラクティブ**: マウスの動きやタッチイベントに反応して波紋を生成します。
-*   **簡単な使用方法**: 柔軟な設定オプションを備えたシンプルな初期化が可能です。
+- **依存ライブラリ不要**  
+  jQueryなどの外部ライブラリに依存せず、純粋なJavaScriptで動作します。
+
+- **高パフォーマンス**  
+  WebGLによるハードウェアアクセラレーションを活用し、滑らかで高効率なアニメーションを実現します。
+
+- **高いカスタマイズ性**  
+  解像度、波紋の半径、乱れ（ディストーション）の強さなど、さまざまなパラメータを柔軟に調整可能です。
+
+- **インタラクティブな演出**  
+  マウスの動きやタッチ操作に反応して、リアルタイムに波紋を生成します。
+
+- **導入が簡単**  
+  シンプルな初期化と設定オプションで、すぐに使用開始できます。ES Modules 対応で、モダンなフロントエンド環境にもスムーズに統合可能です。
 
 ## デモ
 
@@ -19,76 +31,46 @@ WebGLを利用して高性能なレンダリングを行い、あらゆる背景
 <!-- 以下にエフェクトのスクリーンショットやGIFアニメーションを追加できます -->
 <!-- ![Rippler Demo](./demo.gif) -->
 
-![Rippler Demo](demo.gif)
-
-## 使用方法
-
-あなたのプロジェクトでRipplerを使用するには、以下の手順に従ってください：
-
-1.  **リポジトリをクローンします:**
-    ```bash
-    git clone https://github.com/your-username/rippler.git
-    cd rippler
-    ```
-
-2.  **スクリプトを読み込みます:**
-    `rippler.js`と`main.js`スクリプトをHTMLファイルに追加します。`rippler.js`は初期化スクリプトの前に読み込むようにしてください。
-
-    ```html
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <!-- head内のコンテンツ -->
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div id="my-element" style="background-image: url(path/to/your/image.jpg);">
-            <!-- コンテンツ -->
-        </div>
-
-        <script src="rippler.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const rippleElement = document.getElementById('my-element');
-                if (rippleElement) {
-                    const ripples = new Ripples(rippleElement, {
-                        // オプション
-                        resolution: 512,
-                        dropRadius: 20,
-                        perturbance: 0.04,
-                    });
-                }
-            });
-        </script>
-    </body>
-    </html>
-    ```
-
-3.  **ブラウザで開きます:**
-    HTMLファイルをモダンなウェブブラウザで開くだけで、エフェクトを確認できます。
+![Rippler Demo](/demo/demo.gif)
 
 ## 設定
 
 `Ripples`コンストラクタは、以下のプロパティを持つオプションオブジェクトを受け付けます：
 
-| プロパティ    | 型        | デフォルト値 | 説明                                                                          |
-|---------------|-----------|--------------|-------------------------------------------------------------------------------|
-| `resolution`  | `Number`  | `256`        | WebGLテクスチャの解像度。値が高いほど詳細ですが、パフォーマンスは低下します。 |
-| `dropRadius`  | `Number`  | `20`         | 波紋の半径。                                                                  |
-| `perturbance` | `Number`  | `0.03`       | 波紋による歪みの量。                                                          |
-| `interactive` | `Boolean` | `true`       | エフェクトをインタラクティブにするかどうか（マウスやタッチに反応させるか）。    |
-| `imageUrl`    | `String`  | `null`       | CSSを上書きして背景として使用する画像のURL。                                  |
-| `crossOrigin` | `String`  | `""`         | URLから背景画像を読み込む際のcross-origin属性。                               |
+| プロパティ     | 型        | デフォルト値 | 説明                                                                 |
+|----------------|-----------|--------------|----------------------------------------------------------------------|
+| `resolution`   | `number`  | `256`        | WebGLテクスチャの解像度。値を大きくすると波紋が滑らかになりますが、処理負荷が増します。 |
+| `dropRadius`   | `number`  | `20`         | 波紋の半径（ピクセル単位）。大きいほど広範囲に波紋が広がります。            |
+| `perturbance`  | `number`  | `0.03`       | 波紋による視覚的な歪みの強さ。数値を大きくすると、水面の乱れが激しくなります。 |
+| `interactive`  | `boolean` | `true`       | マウス移動やタッチ操作に反応するかどうか。`false` にすると静的な演出になります。|
+| `imageUrl`     | `string`  | `null`       | 背景画像のURL。指定すると要素のCSS背景を上書きして画像を使用します。          |
+| `crossOrigin`  | `string`  | `""`         | 背景画像を読み込む際の CORS 設定。通常は空文字で問題ありません。              |
 
-## コントリビューション
 
-コントリビューションを歓迎します。提案やバグの報告がある場合は、まずIssueを立てて議論してください。プルリクエストも歓迎します。
+## ビルド
 
-1.  このリポジトリをフォークします。
-2.  新しいブランチを作成します (`git checkout -b feature/your-feature-name`)。
-3.  変更をコミットします (`git commit -m 'Add some feature'`)。
-4.  ブランチにプッシュします (`git push origin feature/your-feature-name`)。
-5.  新しいプルリクエストを作成します。
+Rippler のソースコードを自分で改変してビルドしたい場合は、以下の手順に従ってください。  
+※通常の利用であれば、ビルド済みファイルを使用するだけで十分です。コントリビュートやカスタマイズを行う場合に限り、以下のビルド手順が必要です。
+
+### 必要なもの
+
+- **Deno 2.4 以降**  
+  このプロジェクトは Deno を使って開発・ビルドされています。
+
+### 手順
+
+1. プロジェクトをクローンまたはZIPでダウンロードします。
+    ```bash
+    git clone https://github.com/your-username/rippler.git
+    cd rippler
+    ```
+
+2. ビルドコマンドを実行します。
+    ```bash
+    deno task build
+    ```
+
+3. `/dist/` フォルダ内にビルド済みのスクリプトファイルが生成されます。
 
 ## ライセンス
 
