@@ -96,6 +96,7 @@ WebGLを利用して高性能なレンダリングを行い、あらゆる背景
 このプロジェクトはフォークであるため、元の作品である[jquery.ripples](https://github.com/sirxemic/jquery.ripples)のライセンスに従います。
 詳細は[LICENSE](LICENSE)ファイルをご覧ください。
 
-### プロジェクト内で使用されている画像のライセンス
+## プロジェクト内で使用されているアセットのライセンス
+
 - Photo by [Marissa Rodriguez](https://unsplash.com/@marissar_?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/2mKYEVGA4jE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

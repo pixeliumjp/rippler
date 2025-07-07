@@ -74,7 +74,7 @@ class Rippler {
 
 		// Setup resize handler
 		this._boundUpdateSize = this.updateSize.bind(this);
-		window.addEventListener("resize", this._boundUpdateSize);
+		globalThis.addEventListener("resize", this._boundUpdateSize);
 
 		// Setup pointer events
 		this._setupPointerEvents();
@@ -467,7 +467,7 @@ gl_FragColor = texture2D(samplerBackground, backgroundCoord + offset * perturban
 	_createImageData(width, height) {
 		try {
 			return new ImageData(width, height);
-		} catch (e) {
+		} catch (_e) {
 			const canvas = document.createElement("canvas");
 			return canvas.getContext("2d").createImageData(width, height);
 		}
@@ -520,7 +520,7 @@ gl_FragColor = texture2D(samplerBackground, backgroundCoord + offset * perturban
 	// Public methods
 	loadImage() {
 		const gl = this.gl;
-		const cssBackground = window.getComputedStyle(this.element).backgroundImage;
+		const cssBackground = globalThis.getComputedStyle(this.element).backgroundImage;
 		const newImageSource = this.imageUrl || this._extractUrl(cssBackground);
 
 		if (newImageSource === this.imageSource) return;
@@ -668,7 +668,7 @@ gl_FragColor = texture2D(samplerBackground, backgroundCoord + offset * perturban
 		this.destroyed = true;
 
 		// Remove event listeners
-		window.removeEventListener("resize", this._boundUpdateSize);
+		globalThis.removeEventListener("resize", this._boundUpdateSize);
 
 		// Remove canvas
 		if (this.canvas && this.canvas.parentNode) {
@@ -758,7 +758,7 @@ gl_FragColor = texture2D(samplerBackground, backgroundCoord + offset * perturban
 	}
 
 	_computeTextureBoundaries() {
-		const style = window.getComputedStyle(this.element);
+		const style = globalThis.getComputedStyle(this.element);
 		const backgroundSize = style.backgroundSize;
 		const backgroundAttachment = style.backgroundAttachment;
 		const backgroundPosition = this._translateBackgroundPosition(
@@ -768,16 +768,16 @@ gl_FragColor = texture2D(samplerBackground, backgroundCoord + offset * perturban
 		let container;
 		if (backgroundAttachment === "fixed") {
 			container = {
-				left: window.pageXOffset,
-				top: window.pageYOffset,
-				width: window.innerWidth,
-				height: window.innerHeight,
+				left: globalThis.pageXOffset,
+				top: globalThis.pageYOffset,
+				width: globalThis.innerWidth,
+				height: globalThis.innerHeight,
 			};
 		} else {
 			const rect = this.element.getBoundingClientRect();
 			container = {
-				left: rect.left + window.pageXOffset,
-				top: rect.top + window.pageYOffset,
+				left: rect.left + globalThis.pageXOffset,
+				top: rect.top + globalThis.pageYOffset,
 				width: this.element.clientWidth,
 				height: this.element.clientHeight,
 			};
@@ -801,8 +801,8 @@ gl_FragColor = texture2D(samplerBackground, backgroundCoord + offset * perturban
 			backgroundHeight = this.backgroundHeight * scale;
 		} else {
 			const sizes = backgroundSize.split(" ");
-			let width = sizes[0] || "";
-			let height = sizes[1] || width;
+			const width = sizes[0] || "";
+			const height = sizes[1] || width;
 
 			if (this._isPercentage(width)) {
 				backgroundWidth = container.width * parseFloat(width) / 100;
@@ -852,8 +852,8 @@ gl_FragColor = texture2D(samplerBackground, backgroundCoord + offset * perturban
 
 		const elementRect = this.element.getBoundingClientRect();
 		const elementOffset = {
-			left: elementRect.left + window.pageXOffset,
-			top: elementRect.top + window.pageYOffset,
+			left: elementRect.left + globalThis.pageXOffset,
+			top: elementRect.top + globalThis.pageYOffset,
 		};
 
 		this.renderProgram.uniforms.topLeft = new Float32Array([

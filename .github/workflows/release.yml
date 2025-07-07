@@ -16,7 +16,7 @@ jobs:
       - name: Install jq
         run: sudo apt-get install jq
 
-      - name: Extract version from deno.json
+      - name: Extract version from manifest.json
         id: get_version
         run: |
           VERSION=$(jq -r '.version' deno.json)

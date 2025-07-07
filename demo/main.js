@@ -61,10 +61,10 @@ export function copyCode(button) {
 
 	const text = codeBlock.textContent.trim();
 
-	if (navigator.clipboard && window.isSecureContext) {
+	if (navigator.clipboard && globalThis.isSecureContext) {
 		navigator.clipboard.writeText(text).then(
 			() => showCopiedMessage(button),
-			() => alert("コードのコピーに失敗しました。")
+			() => alert("コードのコピーに失敗しました。"),
 		);
 	} else {
 		const textArea = document.createElement("textarea");
@@ -85,4 +85,4 @@ export function copyCode(button) {
 }
 
 // HTMLのonclickから呼び出せるようにグローバルスコープに割り当てる
-window.copyCode = copyCode;
+globalThis.copyCode = copyCode;

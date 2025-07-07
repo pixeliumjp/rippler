@@ -1,6 +1,4 @@
 {
-	"name": "rippler",
-	"version": "1.0.1",
 	"fmt": {
 		"include": [
 			"src/rippler.js",
@@ -18,6 +16,9 @@
 	"tasks": {
 		"serve": "deno run -A --watch https://deno.land/std/http/file_server.ts ./demo/",
 		"format": "deno fmt",
-		"gemini": "gemini"
+		"gemini": "gemini",
+		"build": "",
+		"build:minify": "deno bundle --platform=browser --minify src/rippler.js -o rippler.min.js",
+		"lint": "deno lint src/rippler.js"
 	}
 }
