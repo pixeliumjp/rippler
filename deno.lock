@@ -10,6 +10,7 @@
   },
   "remote": {
     "https://cdn.jsdelivr.net/gh/pixeliumjp/rippler@1.0.0/src/rippler.min.js": "e39fb2d1939748c5604972bb87235e8a2993def14561421bbad05cc0d66f0a44",
+    "https://cdn.jsdelivr.net/gh/pixeliumjp/rippler@latest/src/rippler.min.js": "a4bd06901287362281dcc0c4f13438a3a282bd2625262281bc2899474ddd1170",
     "https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js": "e7b88bddc6c757b2fc8cb113e2469801ab14a78ec1a8fada4d6391e3573f5f9f",
     "https://esm.sh/prismjs@1.29.0": "263ab9a7771b54d8a344ddfc031e31cb5aa0572c25773ea7d0a68cca6f91d060",
     "https://esm.sh/prismjs@1.29.0/components/prism-bash": "3b9e13a7c4d6c4f003ed7cc5035c567aef39720dc31c2ae147d05764ecbd399d",

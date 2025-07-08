@@ -9,7 +9,7 @@ import "https://esm.sh/prismjs@1.29.0/plugins/toolbar/prism-toolbar";
 import "https://esm.sh/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers";
 
 // Ripplerライブラリのインポート
-import Rippler from "https://cdn.jsdelivr.net/gh/pixeliumjp/rippler@1.0.0/src/rippler.min.js";
+import Rippler from "https://cdn.jsdelivr.net/gh/pixeliumjp/rippler@latest/src/rippler.min.js";
 
 // Ripplerの初期化
 const rippleElement_visual = document.querySelector(".visual");

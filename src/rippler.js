@@ -1,5 +1,3 @@
-// rippler.js - ESM module
-
 class Rippler {
 	static DEFAULTS = {
 		imageUrl: null,

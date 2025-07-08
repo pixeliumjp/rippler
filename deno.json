@@ -14,11 +14,12 @@
 		"lineWidth": 200
 	},
 	"tasks": {
-		"serve": "deno run -A --watch https://deno.land/std/http/file_server.ts ./demo/",
-		"format": "deno fmt",
+		"serve": "deno run -A --watch https://deno.land/std/http/file_server.ts ./docs/",
+		"format": "deno fmt --watch",
 		"gemini": "gemini",
-		"build": "",
-		"build:minify": "deno bundle --platform=browser --minify src/rippler.js -o rippler.min.js",
+		"build": "deno task build:normal && deno task build:minify",
+		"build:normal": "deno bundle --platform=browser src/rippler.js -o dist/rippler.js",
+		"build:minify": "deno bundle --platform=browser --minify src/rippler.js -o dist/rippler.min.js",
 		"lint": "deno lint src/rippler.js"
 	}
 }
