@@ -1,4 +1,5 @@
-*{
+/* グローバル設定 */
+* {
 	box-sizing: border-box;
 }
 
@@ -6,9 +7,10 @@ body {
 	margin: 0;
 }
 
+/* ビジュアルエリア */
 .visual {
 	width: 100%;
-	height: min(100dvh,800px);
+	height: min(100dvh, 800px);
 	background-size: cover;
 	background-position: center;
 	background-image: url(bg.jpg);
@@ -17,33 +19,37 @@ body {
 	justify-content: center;
 }
 
-h1{
+h1 {
 	font-size: 5rem;
-    mix-blend-mode: overlay;
-    color: #000;
+	mix-blend-mode: overlay;
+	color: #000;
 	pointer-events: none;
 	user-select: none;
 }
 
-.container{
-	margin-block-start: 3rem;
-	width: min(100%,700px);
-	margin-inline: auto;
-	padding-inline: 1rem;
+/* コンテナ */
+.container {
+	margin-top: 3rem;
+	width: min(100%, 700px);
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
-.rippler{
+/* リップル効果 */
+.rippler {
 	width: 100%;
 	height: 300px;
 }
 
-.rippler.default{
+.rippler.default {
 	background-size: cover;
 	background-position: center;
 	background-image: url(bg.jpg);
 }
 
-
+/* コードウィンドウ */
 .code-wrapper {
 	position: relative;
 	margin-bottom: 30px;
@@ -52,8 +58,8 @@ h1{
 .code-header {
 	background: #2d2d2d;
 	color: white;
-	padding-inline: 1em;
-	padding-block-start: 1em;
+	padding-left: 1em;
+	padding-top: 1em;
 	border-radius: 8px 8px 0 0;
 	font-size: 14px;
 	display: flex;
@@ -61,7 +67,7 @@ h1{
 	align-items: center;
 }
 
-.code-toolbar{
+.code-toolbar {
 	pre[class*="language-"] {
 		margin: 0;
 		border-radius: 0 0 8px 8px;
@@ -69,7 +75,7 @@ h1{
 	}
 }
 
-
+/* コピーボタン */
 .copy-button {
 	background: #4caf50;
 	color: white;

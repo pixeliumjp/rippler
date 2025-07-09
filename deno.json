@@ -5,6 +5,7 @@
 			"docs/rippler.js",
 			"docs/index.html",
 			"docs/main.js",
+			"docs/style.css",
 			"index.html",
 			"deno.json",
 			"style.css"
